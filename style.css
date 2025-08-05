@@ -45,7 +45,7 @@ main.container {
   box-shadow: 0.5rem 0.5rem 0rem rgba(0, 0, 0, 1.0); /* 8px 8px 0px */
   border-radius: 1.25rem; /* 20px */
   border: 0.063rem solid var(--gray-950); /* 1px */
-  padding: 1.5rem;
+  padding: clamp(1rem, 2vw, 1.5rem);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -130,5 +130,16 @@ h1.preset-1 {
 
   .preset-3, .preset-3-bold {
     font-size: .875rem; /* 14px */
+  }
+}
+
+/* Disable hover effects */
+@media (prefers-reduced-motion: reduce) {
+  main.container {
+    transition: none !important; /* !important is okay for accessibility */
+  }
+
+  img.blog-img {
+    transition: none !important;
   }
 }
